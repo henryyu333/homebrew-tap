@@ -1,23 +1,23 @@
 cask "mss" do
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     on_arm do
-      sha256 "841d1de70d1553732c78441bfefd343c9b12a56351acb8c49131dbac826a2526"
+      sha256 "9b51589bb18f45bff40a3f6fd4442d43c15c0b64b1714d8f2719766d90e3c1e1"
       url "https://github.com/henryyu333/mss/releases/download/v#{version}/mss_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "e6702d41db21bdc0165aa3036ac990a1bdd6076cbcdd1af639dc29b72b51ea03"
+      sha256 "8cec2054c4115d67a41f39f25742efc45ad59330af0885b2af19fa4628e17943"
       url "https://github.com/henryyu333/mss/releases/download/v#{version}/mss_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "6a129ed5e9633ce3d1ce3f484160e449bdbe0b6759107c93db138160662d10b4"
+      sha256 "f286d977da53a460fda1855d292270fa51400f97826ced0d77473ac229551576"
       url "https://github.com/henryyu333/mss/releases/download/v#{version}/mss_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "6b1a796327ecc2a3d8c66d9c3db42a3e1a3bc593a1a74a5a10cb3f28aafb0aac"
+      sha256 "bbe583d34a650213127a95b73827033f76776602681a05b9101a44f59e913bac"
       url "https://github.com/henryyu333/mss/releases/download/v#{version}/mss_#{version}_linux_amd64.tar.gz"
     end
   end
