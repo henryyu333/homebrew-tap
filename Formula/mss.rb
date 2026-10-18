@@ -2,15 +2,15 @@
 class Mss < Formula
   desc "Recall and summarize past AI coding sessions, no memory system needed"
   homepage "https://github.com/henryyu333/mss"
-  url "https://github.com/henryyu333/mss/releases/download/v0.3.0/mss_0.3.0_source.tar.gz"
-  sha256 "0f5a2b2b624d93d3efced289a9b0a2892af97eeaf579badc40703175040c8a78"
+  url "https://github.com/henryyu333/mss/releases/download/v0.3.1/mss_0.3.1_source.tar.gz"
+  sha256 "9c99f3cf41209edfd87e2aa79f490a0142ff86c3a1e95dd5d09285550bb18b7a"
   license "MIT"
 
   depends_on "go" => :build
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=0.3.0"), "./cmd/mss"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=0.3.1"), "./cmd/mss"
     pkgshare.install "skills/mss"
   end
 
@@ -23,7 +23,7 @@ class Mss < Formula
   end
 
   test do
-    assert_equal "mss 0.3.0", shell_output("#{bin}/mss version").strip
+    assert_equal "mss 0.3.1", shell_output("#{bin}/mss version").strip
     ENV["HOME"] = testpath.to_s
     system bin/"mss", "install-skill", "codex"
     assert_equal (pkgshare/"mss/SKILL.md").read, (testpath/".agents/skills/mss/SKILL.md").read

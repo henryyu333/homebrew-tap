@@ -2,12 +2,12 @@
 
 Homebrew tap for [mss](https://github.com/henryyu333/mss) — search your AI coding history, on demand.
 
-`Formula/mss.rb` is the source formula for the published **v0.3.0** release,
+`Formula/mss.rb` is the source formula for the published **v0.3.1** release,
 published verbatim from the release pipeline's generated artifact. It builds
-`mss` from the exact tagged source archive (`mss_0.3.0_source.tar.gz`, SHA-256
-`0f5a2b2b624d93d3efced289a9b0a2892af97eeaf579badc40703175040c8a78`) with
+`mss` from the exact tagged source archive (`mss_0.3.1_source.tar.gz`, SHA-256
+`9c99f3cf41209edfd87e2aa79f490a0142ff86c3a1e95dd5d09285550bb18b7a`) with
 `go build`, using the same flags the release binaries use (`CGO_ENABLED=0`,
-`-trimpath`, `-s -w`, `-X main.version=0.3.0`). For future releases, publish the
+`-trimpath`, `-s -w`, `-X main.version=0.3.1`). For future releases, publish the
 release-generated `mss.rb` the same way; do not hand-edit its version/URL/SHA
 lines.
 
@@ -67,7 +67,7 @@ brew install --formula --build-from-source --skip-link henryyu333/tap/mss
 #    unlinked keg; the opt-prefix path resolves to the installed keg even
 #    before linking.
 brew test --force henryyu333/tap/mss
-"$(brew --prefix henryyu333/tap/mss)/bin/mss" version    # expect: mss 0.3.0
+"$(brew --prefix henryyu333/tap/mss)/bin/mss" version    # expect: mss 0.3.1
 
 # 3. Only now retire the cask. Plain uninstall — no --zap (there is nothing
 #    to zap and --zap would delete user data anyway) and no --force.
@@ -76,7 +76,7 @@ brew uninstall --cask mss
 # 4. Link the formula and verify PATH resolution.
 brew link mss
 command -v mss    # expect: $(brew --prefix)/bin/mss
-mss version       # expect: mss 0.3.0
+mss version       # expect: mss 0.3.1
 ```
 
 Notes:
